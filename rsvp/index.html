@@ -3,46 +3,58 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>RSVP — Jaime & Bea</title>
+  <title>Confirma tu asistencia</title>
   <link rel="stylesheet" href="/boda-jaime-bea/assets/css/styles.css" />
 </head>
 <body>
   <header class="topbar">
-    <a class="brand" href="/">Jaime & Bea</a>
+    <div class="topbar-inner">
+      <div class="brand">
+        <div class="monogram">B J</div>
+      </div>
+
+      <div class="menu">
+        <span>Menú</span>
+        <button class="burger" type="button" aria-label="Menú">
+          ☰
+        </button>
+      </div>
+    </div>
+
     <nav class="nav">
-      <a href="/boda-jaime-bea/">Bienvenida</a>
-      <a href="/boda-jaime-bea/rsvp/">Confirma asistencia</a>
-      <a class="active" href="/boda-jaime-bea/info/">Info</a>
+      <a href="/boda-jaime-bea/">¡Bienvenidos!</a>
+      <a class="active" href="/boda-jaime-bea/rsvp/">Confirma tu asistencia</a>
+      <a href="/boda-jaime-bea/info/">Info</a>
     </nav>
   </header>
 
   <main class="container">
+    <section class="hero">
+      <p class="kicker">Confirmación</p>
+      <h1 class="names" style="font-size:38px">Confirma tu asistencia</h1>
+      <div class="bigline"></div>
+      <p class="lead">Busca tu nombre, selecciona tu grupo y confirma persona por persona.</p>
+    </section>
+
     <section class="card">
-      <h1>¿Nos acompañas o te lo pierdes?</h1>
-      <p class="lead">
-        Escribe tu nombre, busca, selecciona tu registro y confirma tu asistencia (y la de tu acompañante si aplica).
-      </p>
-    
       <div class="form">
         <label>
           Buscar por nombre o apellidos
           <input id="q" placeholder="Ej: Jaime" autocomplete="off" />
         </label>
-    
-        <button class="btn" id="btnSearch" type="button">Buscar</button>
-    
+
+        <button class="btn btn-primary" id="btnSearch" type="button">Buscar</button>
+
         <div id="results" class="box" style="display:none; margin-top:12px"></div>
-    
         <div id="party" class="box" style="display:none; margin-top:12px"></div>
-    
+
         <p class="hint" id="msg" style="margin-top:10px"></p>
       </div>
     </section>
-
   </main>
 
   <footer class="footer">
-    <small>© Jaime & Bea</small>
+    <small>© Beatriz & Jaime</small>
   </footer>
 
   <script src="/boda-jaime-bea/assets/js/app.js"></script>
