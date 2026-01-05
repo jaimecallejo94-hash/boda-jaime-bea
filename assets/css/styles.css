@@ -321,3 +321,86 @@ img{ max-width:100%; display:block; }
   border-top: 1px solid var(--line);
   margin-top: 26px;
 }
+
+/* ===== Sección Gracias ===== */
+.thanks{
+  text-align: center;
+}
+
+.thanks h2{
+  text-align: center;
+}
+
+.thanks-text{
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.thanks-iban{
+  margin: 18px auto 8px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.62);
+  max-width: 720px;
+}
+
+.thanks-iban-label{
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.thanks-iban-value{
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: .02em;
+}
+
+.thanks-contacts{
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.thanks-contact{
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.55);
+}
+
+.thanks-name{
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.thanks-link{
+  display: inline-block;
+  color: #1f1f1f;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.85);
+  margin: 4px 6px 0;
+  font-weight: 500;
+}
+
+.thanks-link:hover{
+  background: rgba(0,0,0,.03);
+}
+
+/* Móvil: una sola columna */
+@media (max-width: 720px){
+  .thanks-iban-value{
+    font-size: 18px;
+    word-break: break-word;
+  }
+  .thanks-contacts{
+    grid-template-columns: 1fr;
+  }
+}
