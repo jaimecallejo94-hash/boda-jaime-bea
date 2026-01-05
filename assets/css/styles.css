@@ -144,13 +144,49 @@ img{ max-width:100%; display:block; }
 .hero.leaves::after{
   content:"";
   position:absolute;
-  top: -20px;
-  width: 240px;
-  height: 240px;
-  opacity: .6;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 220px;
+  height: 220px;
+  opacity: .55;
   background-repeat:no-repeat;
   background-size: contain;
   pointer-events:none;
+  z-index: 0; /* detrás del contenido */
+}
+
+/* Izquierda */
+.hero.leaves::before{
+  left: -90px;
+  transform: translateY(-50%) rotate(-8deg);
+}
+
+/* Derecha (espejo) */
+.hero.leaves::after{
+  right: -90px;
+  transform: translateY(-50%) scaleX(-1) rotate(-8deg);
+}
+
+/* Asegura que texto/foto siempre va por delante */
+.hero > *{
+  position: relative;
+  z-index: 1;
+}
+@media (max-width: 720px){
+  .hero.leaves::before,
+  .hero.leaves::after{
+    width: 140px;
+    height: 140px;
+    opacity: .4;
+  }
+
+  .hero.leaves::before{
+    left: -60px;
+  }
+
+  .hero.leaves::after{
+    right: -60px;
+  }
 }
 
 .hero.leaves::before{
