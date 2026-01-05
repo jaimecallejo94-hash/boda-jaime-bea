@@ -158,7 +158,7 @@
   }
 
   async function loadParty(personId) {
-    showMsg("Cargando tu grupo…");
+    showMsg("Cargando…");
     try {
       const out = await apiGet({ action: "party", person_id: personId });
       if (!out.ok) throw new Error(out.error || "No encontrado");
@@ -166,7 +166,7 @@
       resultsEl.style.display = "none";
       renderParty(out);
     } catch (e) {
-      showMsg("No se pudo cargar tu grupo.");
+      showMsg("No se pudo cargar.");
     }
   }
 
