@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RSVP — Jaime & Bea</title>
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/">Jaime & Bea</a>
+    <nav class="nav">
+      <a href="/">Bienvenida</a>
+      <a class="active" href="/rsvp/">Confirma asistencia</a>
+      <a href="/como-llegar/">Cómo llegar</a>
+      <a href="/alojamiento/">Alojamiento</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h1>Confirma tu asistencia</h1>
+      <p class="lead">De momento esta página es “demo”. Luego conectamos el formulario a una hoja o base de datos.</p>
+
+      <form class="form" id="rsvpForm">
+        <label>
+          Nombre y apellidos
+          <input name="name" required placeholder="Ej: María García" />
+        </label>
+
+        <label>
+          ¿Asistirás?
+          <select name="attending" required>
+            <option value="">Selecciona…</option>
+            <option value="si">Sí, asistiré</option>
+            <option value="no">No podré asistir</option>
+          </select>
+        </label>
+
+        <label>
+          Número de acompañantes (opcional)
+          <input name="guests" type="number" min="0" max="10" placeholder="0" />
+        </label>
+
+        <label>
+          Alergias / comentarios (opcional)
+          <textarea name="notes" rows="4" placeholder="Ej: Sin gluten"></textarea>
+        </label>
+
+        <button class="btn" type="submit">Enviar</button>
+        <p class="hint" id="rsvpMsg"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>© Jaime & Bea</small>
+  </footer>
+
+  <script src="/assets/js/app.js"></script>
+</body>
+</html>
