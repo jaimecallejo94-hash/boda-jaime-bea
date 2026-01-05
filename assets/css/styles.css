@@ -260,3 +260,70 @@ input:focus, select:focus, textarea:focus{
   border-top: 1px solid var(--line);
   margin-top: 26px;
 }
+
+/* ====== Ajustes “más Bodas.net” ====== */
+
+/* Más ancho y sensación “extendida” */
+.container{
+  max-width: 1080px;
+  padding: 34px 18px 80px;
+}
+
+/* Header más limpio y ancho */
+.topbar-inner{
+  max-width: 1080px;
+}
+
+/* Hero más grande, aireado y centrado */
+.hero{
+  text-align: center;
+  padding: 56px 18px 10px;
+}
+
+/* Nombres más grandes */
+.names{
+  font-size: 52px;
+  letter-spacing: .2px;
+  margin: 6px 0 14px;
+}
+
+/* Línea decorativa fina */
+.bigline{
+  width: 140px;
+  opacity: .9;
+}
+
+/* Imagen portada estilo Bodas.net */
+.hero-photo{
+  width: min(720px, 100%);
+  margin: 18px auto 0;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: 0 10px 28px rgba(0,0,0,.08);
+  background: #fff;
+}
+
+.hero-photo img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Cards más “papel”, con más respiración */
+.card{
+  padding: 26px 22px;
+  margin-top: 18px;
+}
+
+/* Texto como carta */
+.bodytext{
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+/* Botones más similares */
+.btn{
+  padding: 11px 16px;
+  border-radius: 999px;
+}
