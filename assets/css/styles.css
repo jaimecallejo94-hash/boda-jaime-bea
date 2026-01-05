@@ -34,7 +34,7 @@ img{ max-width:100%; display:block; }
 .topbar{
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 20;
   background: rgba(251,251,247,.92);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
@@ -139,66 +139,40 @@ img{ max-width:100%; display:block; }
   padding: 56px 18px 10px;
 }
 
-/* ===== Uvas decorativas ===== */
-.hero.leaves::before,
-.hero.leaves::after{
+/* Asegura capas: contenido arriba, decoración detrás */
+.hero > *{
+  position: relative;
+  z-index: 2;
+}
+
+/* ===== UVAS (a los lados del “¡Nos casamos!”) =====
+   Se anclan con top fijo dentro del hero para que queden
+   alrededor del kicker (zona alta) y no invadan el título. */
+.hero.grapes::before,
+.hero.grapes::after{
   content:"";
   position:absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 220px;
-  height: 220px;
-  opacity: .55;
+  top: 52px;                 /* altura del kicker aprox */
+  width: 190px;
+  height: 190px;
+  opacity: .62;
   background-repeat:no-repeat;
   background-size: contain;
   pointer-events:none;
-  z-index: 0; /* detrás del contenido */
+  z-index: 1;               /* detrás del texto/foto */
 }
 
-/* Izquierda */
-.hero.leaves::before{
-  left: -90px;
-  transform: translateY(-50%) rotate(-8deg);
+/* SVG: racimo + tallo */
+.hero.grapes::before{
+  left: -42px;
+  transform: rotate(-10deg);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 320'%3E%3Cg fill='%23733a6a'%3E%3Ccircle cx='120' cy='160' r='16'/%3E%3Ccircle cx='145' cy='160' r='16'/%3E%3Ccircle cx='132' cy='138' r='16'/%3E%3Ccircle cx='132' cy='182' r='16'/%3E%3Ccircle cx='158' cy='138' r='16'/%3E%3Ccircle cx='158' cy='182' r='16'/%3E%3Ccircle cx='145' cy='204' r='16'/%3E%3Ccircle cx='118' cy='204' r='16'/%3E%3Ccircle cx='170' cy='204' r='16'/%3E%3C/g%3E%3Cg stroke='%235b7d3a' stroke-width='6' fill='none' stroke-linecap='round'%3E%3Cpath d='M132 120 C120 95 150 80 175 90'/%3E%3Cpath d='M175 90 C200 70 215 65 235 60'/%3E%3C/g%3E%3Cg fill='%238dbb7e' opacity='.35'%3E%3Cellipse cx='190' cy='92' rx='18' ry='10' transform='rotate(-18 190 92)'/%3E%3Cellipse cx='210' cy='78' rx='16' ry='9' transform='rotate(-18 210 78)'/%3E%3C/g%3E%3C/svg%3E");
 }
 
-/* Derecha (espejo) */
-.hero.leaves::after{
-  right: -90px;
-  transform: translateY(-50%) scaleX(-1) rotate(-8deg);
-}
-
-/* Asegura que texto/foto siempre va por delante */
-.hero > *{
-  position: relative;
-  z-index: 1;
-}
-@media (max-width: 720px){
-  .hero.leaves::before,
-  .hero.leaves::after{
-    width: 140px;
-    height: 140px;
-    opacity: .4;
-  }
-
-  .hero.leaves::before{
-    left: -60px;
-  }
-
-  .hero.leaves::after{
-    right: -60px;
-  }
-}
-
-.hero.leaves::before{
-  left: -40px;
-  transform: rotate(-8deg);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 320'%3E%3Cg fill='%23733a6a'%3E%3Ccircle cx='120' cy='160' r='16'/%3E%3Ccircle cx='145' cy='160' r='16'/%3E%3Ccircle cx='132' cy='138' r='16'/%3E%3Ccircle cx='132' cy='182' r='16'/%3E%3Ccircle cx='158' cy='138' r='16'/%3E%3Ccircle cx='158' cy='182' r='16'/%3E%3Ccircle cx='145' cy='204' r='16'/%3E%3C/g%3E%3Cg stroke='%235b7d3a' stroke-width='6' fill='none' stroke-linecap='round'%3E%3Cpath d='M132 120 C120 95 150 80 175 90'/%3E%3Cpath d='M175 90 C200 70 215 65 235 60'/%3E%3C/g%3E%3C/svg%3E");
-}
-
-.hero.leaves::after{
-  right: -40px;
-  transform: scaleX(-1) rotate(-8deg);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 320'%3E%3Cg fill='%23733a6a'%3E%3Ccircle cx='120' cy='160' r='16'/%3E%3Ccircle cx='145' cy='160' r='16'/%3E%3Ccircle cx='132' cy='138' r='16'/%3E%3Ccircle cx='132' cy='182' r='16'/%3E%3Ccircle cx='158' cy='138' r='16'/%3E%3Ccircle cx='158' cy='182' r='16'/%3E%3Ccircle cx='145' cy='204' r='16'/%3E%3C/g%3E%3Cg stroke='%235b7d3a' stroke-width='6' fill='none' stroke-linecap='round'%3E%3Cpath d='M132 120 C120 95 150 80 175 90'/%3E%3Cpath d='M175 90 C200 70 215 65 235 60'/%3E%3C/g%3E%3C/svg%3E");
+.hero.grapes::after{
+  right: -42px;
+  transform: scaleX(-1) rotate(-10deg);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 320'%3E%3Cg fill='%23733a6a'%3E%3Ccircle cx='120' cy='160' r='16'/%3E%3Ccircle cx='145' cy='160' r='16'/%3E%3Ccircle cx='132' cy='138' r='16'/%3E%3Ccircle cx='132' cy='182' r='16'/%3E%3Ccircle cx='158' cy='138' r='16'/%3E%3Ccircle cx='158' cy='182' r='16'/%3E%3Ccircle cx='145' cy='204' r='16'/%3E%3Ccircle cx='118' cy='204' r='16'/%3E%3Ccircle cx='170' cy='204' r='16'/%3E%3C/g%3E%3Cg stroke='%235b7d3a' stroke-width='6' fill='none' stroke-linecap='round'%3E%3Cpath d='M132 120 C120 95 150 80 175 90'/%3E%3Cpath d='M175 90 C200 70 215 65 235 60'/%3E%3C/g%3E%3Cg fill='%238dbb7e' opacity='.35'%3E%3Cellipse cx='190' cy='92' rx='18' ry='10' transform='rotate(-18 190 92)'/%3E%3Cellipse cx='210' cy='78' rx='16' ry='9' transform='rotate(-18 210 78)'/%3E%3C/g%3E%3C/svg%3E");
 }
 
 .kicker{
@@ -306,40 +280,4 @@ img{ max-width:100%; display:block; }
 
 .btn-ghost{
   background: transparent;
-  border-color: var(--line);
-}
-
-/* ================= GOOGLE FORM ================= */
-.form-embed{
-  margin-top: 18px;
-  border-radius: 14px;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  background: #fff;
-  box-shadow: var(--shadow);
-}
-
-.form-embed iframe{
-  width: 100%;
-  height: 1100px;
-  border: 0;
-  display: block;
-}
-
-@media (max-width: 720px){
-  .names{ font-size: 40px; }
-  .form-embed iframe{ height: 1400px; }
-}
-
-@media (max-width: 380px){
-  .form-embed iframe{ height: 1600px; }
-}
-
-/* ================= FOOTER ================= */
-.footer{
-  text-align:center;
-  color: var(--muted);
-  padding: 24px 16px 34px;
-  border-top: 1px solid var(--line);
-  margin-top: 26px;
-}
+  bo
