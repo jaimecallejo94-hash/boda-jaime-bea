@@ -401,6 +401,17 @@ img{ max-width:100%; display:block; }
     word-break: break-word;
   }
   .thanks-contacts{
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr; /* fuerza 2 columnas */
+    gap: 10px;
+  }
+
+  .thanks-name{
+    font-size: 16px;
+  }
+
+  .thanks-link{
+    font-size: 13px;
+    padding: 5px 8px;
+    margin: 4px 0 0;
   }
 }
