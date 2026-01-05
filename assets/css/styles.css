@@ -16,19 +16,21 @@
   --maxw: 1080px;
 }
 
-/* Base */
+/* ================= BASE ================= */
 *{ box-sizing:border-box; }
 html, body { height: 100%; }
+
 body{
   margin:0;
   background: var(--bg);
   color: var(--text);
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }
+
 a{ color:inherit; text-decoration:none; }
 img{ max-width:100%; display:block; }
 
-/* Header */
+/* ================= HEADER ================= */
 .topbar{
   position: sticky;
   top: 0;
@@ -38,6 +40,7 @@ img{ max-width:100%; display:block; }
   border-bottom: 1px solid var(--line);
   padding: 14px 16px;
 }
+
 .topbar-inner{
   max-width: var(--maxw);
   margin: 0 auto;
@@ -50,7 +53,6 @@ img{ max-width:100%; display:block; }
 .brand{
   display:flex;
   align-items:center;
-  gap: 10px;
 }
 
 .monogram{
@@ -65,45 +67,79 @@ img{ max-width:100%; display:block; }
   letter-spacing: .5px;
 }
 
-/* Nav */
+/* ================= NAV ================= */
 .nav{
   display:flex;
   gap: 10px;
   flex-wrap: wrap;
   justify-content:flex-end;
 }
+
 .nav a{
   padding: 8px 12px;
   border-radius: 999px;
   border: 1px solid transparent;
   color: var(--muted);
   font-weight: 500;
+  white-space: nowrap;
 }
+
 .nav a:hover{
   border-color: var(--line);
   color: var(--text);
   background: rgba(0,0,0,.02);
 }
+
 .nav a.active{
   border-color: var(--line);
   background: rgba(99,176,107,.12);
   color: #214b27;
 }
 
-/* Layout */
+/* ===== MENÚ MÓVIL PRO (scroll horizontal) ===== */
+@media (max-width: 720px){
+  .topbar{
+    padding: 10px 12px;
+  }
+
+  .topbar-inner{
+    gap: 10px;
+  }
+
+  .nav{
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 6px;
+  }
+  .nav::-webkit-scrollbar{ display:none; }
+
+  .nav a{
+    flex: 0 0 auto;
+    font-size: 14px;
+    padding: 7px 10px;
+  }
+}
+
+/* ================= LAYOUT ================= */
 .container{
   max-width: var(--maxw);
   margin: 0 auto;
   padding: 34px 18px 80px;
 }
 
-/* Hero (estilo Bodas.net) */
+/* ================= HERO ================= */
 .hero{
   position: relative;
   text-align:center;
   padding: 56px 18px 10px;
 }
 
+/* ===== Uvas decorativas ===== */
 .hero.leaves::before,
 .hero.leaves::after{
   content:"";
@@ -140,7 +176,6 @@ img{ max-width:100%; display:block; }
   font-weight: 600;
   font-size: 54px;
   margin: 6px 0 14px;
-  letter-spacing: .2px;
 }
 
 .bigline{
@@ -156,26 +191,21 @@ img{ max-width:100%; display:block; }
   gap: 6px;
   font-weight: 500;
 }
-.meta .muted{ color: var(--muted); font-weight: 400; }
 
-/* Foto de portada */
+.meta .muted{ color: var(--muted); }
+
+/* ===== Foto hero ===== */
 .hero-photo{
   width: min(760px, 100%);
   margin: 16px auto 0;
   border-radius: 14px;
   overflow:hidden;
   border: 1px solid var(--line);
-  box-shadow: 0 10px 28px rgba(0,0,0,.08);
   background: #fff;
+  box-shadow: var(--shadow);
 }
 
-.hero-photo img{
-  width:100%;
-  height:auto;
-  display:block;
-}
-
-/* Cards */
+/* ================= CARDS ================= */
 .card{
   background: var(--paper);
   border: 1px solid var(--line);
@@ -192,17 +222,10 @@ img{ max-width:100%; display:block; }
   font-size: 24px;
 }
 
-.lead{
-  color: var(--muted);
-  margin: 0 0 14px;
-  line-height: 1.6;
-}
-
 .bodytext{
   color: #2a2a2a;
   font-size: 16px;
   line-height: 1.75;
-  margin: 0;
 }
 
 .signature{
@@ -211,20 +234,18 @@ img{ max-width:100%; display:block; }
   font-size: 18px;
 }
 
-/* Boxes */
-.box{
+/* ===== Foto dentro de contenido ===== */
+.content-photo{
+  width: 100%;
+  margin-top: 16px;
+  border-radius: 14px;
+  overflow: hidden;
   border: 1px solid var(--line);
-  border-radius: 16px;
-  background: rgba(255,255,255,.62);
-  padding: 14px;
+  background: #fff;
+  box-shadow: var(--shadow);
 }
 
-.hint{
-  color: var(--muted);
-  font-size: 14px;
-}
-
-/* Buttons */
+/* ================= BOTONES ================= */
 .btnrow{
   display:flex;
   gap: 10px;
@@ -239,14 +260,10 @@ img{ max-width:100%; display:block; }
   border: 1px solid rgba(0,0,0,.08);
   font-weight: 600;
   cursor:pointer;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
 }
 
 .btn-primary{
   background: var(--accent);
-  border-color: rgba(0,0,0,.06);
   color: #fff;
 }
 .btn-primary:hover{ background: var(--accent-dark); }
@@ -254,36 +271,35 @@ img{ max-width:100%; display:block; }
 .btn-ghost{
   background: transparent;
   border-color: var(--line);
-  color: var(--text);
 }
-.btn-ghost:hover{ background: rgba(0,0,0,.03); }
 
-/* Forms */
-.form{
-  display:grid;
-  gap: 12px;
-  margin-top: 12px;
-}
-label{
-  display:grid;
-  gap: 6px;
-  color: var(--muted);
-  font-size: 14px;
-}
-input, select, textarea{
-  padding: 12px 12px;
+/* ================= GOOGLE FORM ================= */
+.form-embed{
+  margin-top: 18px;
   border-radius: 14px;
+  overflow: hidden;
   border: 1px solid var(--line);
-  background: rgba(255,255,255,.9);
-  outline: none;
-  font-size: 15px;
-}
-input:focus, select:focus, textarea:focus{
-  border-color: rgba(99,176,107,.55);
-  box-shadow: 0 0 0 3px rgba(99,176,107,.12);
+  background: #fff;
+  box-shadow: var(--shadow);
 }
 
-/* Footer */
+.form-embed iframe{
+  width: 100%;
+  height: 1100px;
+  border: 0;
+  display: block;
+}
+
+@media (max-width: 720px){
+  .names{ font-size: 40px; }
+  .form-embed iframe{ height: 1400px; }
+}
+
+@media (max-width: 380px){
+  .form-embed iframe{ height: 1600px; }
+}
+
+/* ================= FOOTER ================= */
 .footer{
   text-align:center;
   color: var(--muted);
@@ -291,59 +307,3 @@ input:focus, select:focus, textarea:focus{
   border-top: 1px solid var(--line);
   margin-top: 26px;
 }
-
-/* Responsive */
-@media (max-width: 720px){
-  .names{ font-size: 40px; }
-  .hero.leaves::before, .hero.leaves::after{
-    width: 160px;
-    height: 160px;
-    opacity: .45;
-  }
-  .nav{ justify-content:center; }
-}
-@media (max-width: 720px){
-  .topbar{
-    padding: 10px 12px;
-  }
-
-  .topbar-inner{
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .nav{
-    justify-content: center;
-    width: 100%;
-    gap: 8px;
-  }
-
-  .nav a{
-    padding: 7px 10px;
-    font-size: 14px;
-    white-space: nowrap;
-  }
-
-  .monogram{
-    width: 42px;
-    height: 42px;
-  }
-  
-.content-photo{
-  width: 100%;
-  margin-top: 16px;
-  border-radius: 14px;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  background: #fff;
-  box-shadow: 0 10px 28px rgba(0,0,0,.08);
-}
-
-.content-photo img{
-  width: 100%;
-  height: auto;
-  display: block;
-}
-  
-
