@@ -29,14 +29,23 @@
     return res.json();
   }
 
-  async function apiPost(body) {
+  async function apiPost(bodyObj) {
+    const formBody = new URLSearchParams();
+    formBody.set("payload", JSON.stringify(bodyObj));
+  
     const res = await fetch(API_BASE, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(body),
+      headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
+      body: formBody.toString(),
+      redirect: "follow",
     });
-    if (!res.ok) throw new Error("Error de red");
-    return res.json();
+  
+    const text = await res.text(); // por si no devuelve JSON válido
+    try {
+      return JSON.parse(text);
+    } catch {
+      throw new Error("Respuesta no JSON: " + text);
+    }
   }
 
   function showMsg(text) {
