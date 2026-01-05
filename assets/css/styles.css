@@ -1,37 +1,34 @@
-/* Tipos parecidos a Bodas.net: serif elegante + sans limpia */
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500;600&display=swap");
 
 :root{
   --bg: #fbfbf7;
-  --paper: #ffffff;
+  --paper: rgba(255,255,255,.78);
   --text: #1f1f1f;
   --muted: #6a6a6a;
   --line: #e7e4da;
+
   --accent: #63b06b;
   --accent-dark: #4e9a56;
+
   --radius: 18px;
-  --shadow: 0 8px 24px rgba(0,0,0,.06);
+  --shadow: 0 10px 28px rgba(0,0,0,.07);
+
+  --maxw: 1080px;
 }
 
+/* Base */
 *{ box-sizing:border-box; }
-html, body { height:100%; }
+html, body { height: 100%; }
 body{
   margin:0;
   background: var(--bg);
   color: var(--text);
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }
-
 a{ color:inherit; text-decoration:none; }
+img{ max-width:100%; display:block; }
 
-/* Layout */
-.container{
-  max-width: 920px;
-  margin: 0 auto;
-  padding: 28px 16px 70px;
-}
-
-/* Header estilo “B J” + Menú */
+/* Header */
 .topbar{
   position: sticky;
   top: 0;
@@ -41,14 +38,13 @@ a{ color:inherit; text-decoration:none; }
   border-bottom: 1px solid var(--line);
   padding: 14px 16px;
 }
-
 .topbar-inner{
-  max-width: 920px;
+  max-width: var(--maxw);
   margin: 0 auto;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap: 12px;
+  gap: 14px;
 }
 
 .brand{
@@ -69,34 +65,13 @@ a{ color:inherit; text-decoration:none; }
   letter-spacing: .5px;
 }
 
-.menu{
-  display:flex;
-  align-items:center;
-  gap: 10px;
-  color: var(--muted);
-  font-weight: 500;
-}
-
-.burger{
-  width: 42px;
-  height: 42px;
-  border-radius: 999px;
-  border: 1px solid var(--line);
-  background: transparent;
-  display:grid;
-  place-items:center;
-  cursor:pointer;
-}
-.burger:active{ transform: scale(.99); }
-
+/* Nav */
 .nav{
   display:flex;
   gap: 10px;
   flex-wrap: wrap;
-  justify-content:center;
-  padding: 14px 0 0;
+  justify-content:flex-end;
 }
-
 .nav a{
   padding: 8px 12px;
   border-radius: 999px;
@@ -104,24 +79,56 @@ a{ color:inherit; text-decoration:none; }
   color: var(--muted);
   font-weight: 500;
 }
-.nav a:hover{ border-color: var(--line); color: var(--text); }
+.nav a:hover{
+  border-color: var(--line);
+  color: var(--text);
+  background: rgba(0,0,0,.02);
+}
 .nav a.active{
   border-color: var(--line);
   background: rgba(99,176,107,.12);
   color: #214b27;
 }
 
-/* Hero centrado */
-.hero{
-  text-align:center;
-  padding: 36px 18px 20px;
+/* Layout */
+.container{
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 34px 18px 80px;
 }
 
-.names{
-  font-family: "Playfair Display", serif;
-  font-weight: 600;
-  font-size: 44px;
-  margin: 6px 0 10px;
+/* Hero (estilo Bodas.net) */
+.hero{
+  position: relative;
+  text-align:center;
+  padding: 56px 18px 10px;
+}
+
+/* Hojas / ramas decorativas (SVG embebido, no necesitas imágenes) */
+.hero.leaves::before,
+.hero.leaves::after{
+  content:"";
+  position:absolute;
+  top: -10px;
+  width: 220px;
+  height: 220px;
+  opacity: .55;
+  background-repeat:no-repeat;
+  background-size: contain;
+  pointer-events:none;
+  filter: saturate(.95);
+}
+
+.hero.leaves::before{
+  left: -30px;
+  transform: rotate(-6deg);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='320' viewBox='0 0 320 320'%3E%3Cg fill='none' stroke='%2389a77e' stroke-width='6' stroke-linecap='round'%3E%3Cpath d='M60 250 C110 210 140 165 165 120 C190 75 230 45 270 40'/%3E%3Cpath d='M120 215 C105 205 95 190 90 175'/%3E%3Cpath d='M150 185 C135 176 125 162 120 145'/%3E%3Cpath d='M185 150 C170 142 160 130 155 115'/%3E%3Cpath d='M215 115 C200 110 190 100 184 88'/%3E%3Cpath d='M95 235 C80 245 70 255 62 265'/%3E%3C/g%3E%3Cg fill='%23a9c6a0' opacity='.35'%3E%3Cellipse cx='108' cy='196' rx='18' ry='10' transform='rotate(-25 108 196)'/%3E%3Cellipse cx='135' cy='165' rx='18' ry='10' transform='rotate(-25 135 165)'/%3E%3Cellipse cx='167' cy='132' rx='18' ry='10' transform='rotate(-25 167 132)'/%3E%3Cellipse cx='201' cy='100' rx='18' ry='10' transform='rotate(-25 201 100)'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.hero.leaves::after{
+  right: -30px;
+  transform: scaleX(-1) rotate(-6deg);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='320' viewBox='0 0 320 320'%3E%3Cg fill='none' stroke='%2389a77e' stroke-width='6' stroke-linecap='round'%3E%3Cpath d='M60 250 C110 210 140 165 165 120 C190 75 230 45 270 40'/%3E%3Cpath d='M120 215 C105 205 95 190 90 175'/%3E%3Cpath d='M150 185 C135 176 125 162 120 145'/%3E%3Cpath d='M185 150 C170 142 160 130 155 115'/%3E%3Cpath d='M215 115 C200 110 190 100 184 88'/%3E%3Cpath d='M95 235 C80 245 70 255 62 265'/%3E%3C/g%3E%3Cg fill='%23a9c6a0' opacity='.35'%3E%3Cellipse cx='108' cy='196' rx='18' ry='10' transform='rotate(-25 108 196)'/%3E%3Cellipse cx='135' cy='165' rx='18' ry='10' transform='rotate(-25 135 165)'/%3E%3Cellipse cx='167' cy='132' rx='18' ry='10' transform='rotate(-25 167 132)'/%3E%3Cellipse cx='201' cy='100' rx='18' ry='10' transform='rotate(-25 201 100)'/%3E%3C/g%3E%3C/svg%3E");
 }
 
 .kicker{
@@ -130,10 +137,18 @@ a{ color:inherit; text-decoration:none; }
   color: var(--muted);
 }
 
+.names{
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  font-size: 54px;
+  margin: 6px 0 14px;
+  letter-spacing: .2px;
+}
+
 .bigline{
   height: 1px;
   background: var(--line);
-  width: 120px;
+  width: 140px;
   margin: 18px auto;
 }
 
@@ -141,19 +156,35 @@ a{ color:inherit; text-decoration:none; }
   display:flex;
   flex-direction:column;
   gap: 6px;
-  color: var(--text);
   font-weight: 500;
 }
 .meta .muted{ color: var(--muted); font-weight: 400; }
 
-/* Card “papel” */
+/* Foto de portada */
+.hero-photo{
+  width: min(760px, 100%);
+  margin: 16px auto 0;
+  border-radius: 14px;
+  overflow:hidden;
+  border: 1px solid var(--line);
+  box-shadow: 0 10px 28px rgba(0,0,0,.08);
+  background: #fff;
+}
+
+.hero-photo img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+/* Cards */
 .card{
-  background: rgba(255,255,255,.72);
+  background: var(--paper);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  padding: 22px 18px;
-  margin-top: 14px;
+  padding: 26px 22px;
+  margin-top: 18px;
 }
 
 .card h2{
@@ -166,12 +197,14 @@ a{ color:inherit; text-decoration:none; }
 .lead{
   color: var(--muted);
   margin: 0 0 14px;
-  line-height: 1.55;
+  line-height: 1.6;
 }
 
 .bodytext{
   color: #2a2a2a;
-  line-height: 1.65;
+  font-size: 16px;
+  line-height: 1.75;
+  margin: 0;
 }
 
 .signature{
@@ -180,7 +213,20 @@ a{ color:inherit; text-decoration:none; }
   font-size: 18px;
 }
 
-/* Botones */
+/* Boxes */
+.box{
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(255,255,255,.62);
+  padding: 14px;
+}
+
+.hint{
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* Buttons */
 .btnrow{
   display:flex;
   gap: 10px;
@@ -190,7 +236,7 @@ a{ color:inherit; text-decoration:none; }
 }
 
 .btn{
-  padding: 10px 14px;
+  padding: 11px 16px;
   border-radius: 999px;
   border: 1px solid rgba(0,0,0,.08);
   font-weight: 600;
@@ -198,24 +244,23 @@ a{ color:inherit; text-decoration:none; }
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  gap: 8px;
 }
 
 .btn-primary{
   background: var(--accent);
   border-color: rgba(0,0,0,.06);
-  color: white;
+  color: #fff;
 }
 .btn-primary:hover{ background: var(--accent-dark); }
 
 .btn-ghost{
   background: transparent;
-  color: var(--text);
   border-color: var(--line);
+  color: var(--text);
 }
 .btn-ghost:hover{ background: rgba(0,0,0,.03); }
 
-/* Form */
+/* Forms */
 .form{
   display:grid;
   gap: 12px;
@@ -240,18 +285,6 @@ input:focus, select:focus, textarea:focus{
   box-shadow: 0 0 0 3px rgba(99,176,107,.12);
 }
 
-.box{
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  background: rgba(255,255,255,.62);
-  padding: 14px;
-}
-
-.hint{
-  color: var(--muted);
-  font-size: 14px;
-}
-
 /* Footer */
 .footer{
   text-align:center;
@@ -261,69 +294,13 @@ input:focus, select:focus, textarea:focus{
   margin-top: 26px;
 }
 
-/* ====== Ajustes “más Bodas.net” ====== */
-
-/* Más ancho y sensación “extendida” */
-.container{
-  max-width: 1080px;
-  padding: 34px 18px 80px;
-}
-
-/* Header más limpio y ancho */
-.topbar-inner{
-  max-width: 1080px;
-}
-
-/* Hero más grande, aireado y centrado */
-.hero{
-  text-align: center;
-  padding: 56px 18px 10px;
-}
-
-/* Nombres más grandes */
-.names{
-  font-size: 52px;
-  letter-spacing: .2px;
-  margin: 6px 0 14px;
-}
-
-/* Línea decorativa fina */
-.bigline{
-  width: 140px;
-  opacity: .9;
-}
-
-/* Imagen portada estilo Bodas.net */
-.hero-photo{
-  width: min(720px, 100%);
-  margin: 18px auto 0;
-  border-radius: 14px;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  box-shadow: 0 10px 28px rgba(0,0,0,.08);
-  background: #fff;
-}
-
-.hero-photo img{
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Cards más “papel”, con más respiración */
-.card{
-  padding: 26px 22px;
-  margin-top: 18px;
-}
-
-/* Texto como carta */
-.bodytext{
-  font-size: 16px;
-  line-height: 1.75;
-}
-
-/* Botones más similares */
-.btn{
-  padding: 11px 16px;
-  border-radius: 999px;
+/* Responsive */
+@media (max-width: 720px){
+  .names{ font-size: 40px; }
+  .hero.leaves::before, .hero.leaves::after{
+    width: 160px;
+    height: 160px;
+    opacity: .45;
+  }
+  .nav{ justify-content:center; }
 }
