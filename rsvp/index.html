@@ -18,40 +18,27 @@
 
   <main class="container">
     <section class="card">
-      <h1>Confirma tu asistencia</h1>
+      <h1>¿Nos acompañas o te lo pierdes?</h1>
       <p class="lead">
-        Por favor, confirma si podrás acompañarnos.
+        Escribe tu nombre, busca, selecciona tu registro y confirma tu asistencia (y la de tu acompañante si aplica).
       </p>
-
-      <form class="form" id="rsvpForm">
+    
+      <div class="form">
         <label>
-          Nombre y apellidos
-          <input name="name" required placeholder="Ej: María García" />
+          Buscar por nombre o apellidos
+          <input id="q" placeholder="Ej: Jaime" autocomplete="off" />
         </label>
-
-        <label>
-          ¿Asistirás?
-          <select name="attending" required>
-            <option value="">Selecciona…</option>
-            <option value="si">Sí, asistiré</option>
-            <option value="no">No podré asistir</option>
-          </select>
-        </label>
-
-        <label>
-          Número de acompañantes
-          <input name="guests" type="number" min="0" max="10" placeholder="0" />
-        </label>
-
-        <label>
-          Alergias o comentarios
-          <textarea name="notes" rows="4" placeholder="Ej: sin gluten"></textarea>
-        </label>
-
-        <button class="btn" type="submit">Enviar</button>
-        <p class="hint" id="rsvpMsg"></p>
-      </form>
+    
+        <button class="btn" id="btnSearch" type="button">Buscar</button>
+    
+        <div id="results" class="box" style="display:none; margin-top:12px"></div>
+    
+        <div id="party" class="box" style="display:none; margin-top:12px"></div>
+    
+        <p class="hint" id="msg" style="margin-top:10px"></p>
+      </div>
     </section>
+
   </main>
 
   <footer class="footer">
