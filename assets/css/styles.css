@@ -302,3 +302,48 @@ input:focus, select:focus, textarea:focus{
   }
   .nav{ justify-content:center; }
 }
+@media (max-width: 720px){
+  .topbar{
+    padding: 10px 12px;
+  }
+
+  .topbar-inner{
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .nav{
+    justify-content: center;
+    width: 100%;
+    gap: 8px;
+  }
+
+  .nav a{
+    padding: 7px 10px;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  .monogram{
+    width: 42px;
+    height: 42px;
+  }
+  
+.content-photo{
+  width: 100%;
+  margin-top: 16px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: #fff;
+  box-shadow: 0 10px 28px rgba(0,0,0,.08);
+}
+
+.content-photo img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+  
+
