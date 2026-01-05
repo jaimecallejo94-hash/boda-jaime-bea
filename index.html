@@ -4,13 +4,41 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Boda Jaime & Bea</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
-  <main>
-    <h1>Jaime & Bea</h1>
-    <p>¡Nos casamos! Pronto más info.</p>
+  <header class="topbar">
+    <a class="brand" href="/">Jaime & Bea</a>
+    <nav class="nav">
+      <a href="/">Bienvenida</a>
+      <a href="/rsvp/">Confirma asistencia</a>
+      <a href="/info/">Info</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>¡Nos casamos!</h1>
+      <p class="lead">Jaime & Bea — <strong>(pon aquí la fecha)</strong> — <strong>(pon aquí el lugar)</strong></p>
+      <div class="hero-actions">
+        <a class="btn btn-ghost" href="/info/">Ver info</a>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Información</h2>
+      <ul class="list">
+        <li><strong>Hora:</strong> (pon aquí la hora)</li>
+        <li><strong>Dirección:</strong> (pon aquí dirección)</li>
+        <li><strong>Dress code:</strong> (opcional)</li>
+      </ul>
+    </section>
   </main>
-  <script src="app.js"></script>
+
+  <footer class="footer">
+    <small>© Jaime & Bea</small>
+  </footer>
+
+  <script src="assets/js/app.js"></script>
 </body>
 </html>
