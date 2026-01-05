@@ -3,86 +3,164 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Info — Jaime & Bea</title>
+  <title>Info</title>
   <link rel="stylesheet" href="/boda-jaime-bea/assets/css/styles.css" />
 </head>
 <body>
   <header class="topbar">
-    <a class="brand" href="/">Jaime & Bea</a>
+    <div class="topbar-inner">
+      <div class="brand">
+        <div class="monogram">B J</div>
+      </div>
+
+      <div class="menu">
+        <span>Menú</span>
+        <button class="burger" type="button" aria-label="Menú">☰</button>
+      </div>
+    </div>
+
     <nav class="nav">
-      <a class="active" href="/boda-jaime-bea/">Bienvenida</a>
-      <a href="/boda-jaime-bea/rsvp/">Confirma asistencia</a>
-      <a href="/boda-jaime-bea/info/">Info</a>
+      <a href="/boda-jaime-bea/">¡Bienvenidos!</a>
+      <a href="/boda-jaime-bea/rsvp/">Confirma tu asistencia</a>
+      <a class="active" href="/boda-jaime-bea/info/">Info</a>
     </nav>
   </header>
 
   <main class="container">
-    <section class="card">
-      <h1>Información</h1>
-      <p class="lead">
-        Cómo llegar, alojamiento y detalles útiles.
-      </p>
-    </section>
-
-    <section class="card">
-      <h2>Cómo llegar</h2>
-
-      <div class="grid">
-        <div class="box">
-          <h3>En coche</h3>
-          <ul class="list">
-            <li>(Indicación 1)</li>
-            <li>(Indicación 2)</li>
-          </ul>
-        </div>
-
-        <div class="box">
-          <h3>Transporte público</h3>
-          <ul class="list">
-            <li>(Indicación 1)</li>
-            <li>(Indicación 2)</li>
-          </ul>
-        </div>
+    <section class="hero">
+      <p class="kicker">Detalles del gran día</p>
+      <h1 class="names" style="font-size:38px">Info</h1>
+      <div class="bigline"></div>
+      <div class="meta">
+        <div><strong>(Pon aquí la fecha)</strong></div>
+        <div class="muted">(Pon aquí el lugar)</div>
       </div>
 
-      <div class="box" style="margin-top:12px">
-        <h3>Mapa</h3>
-        <a class="link" href="#" target="_blank" rel="noopener">
-          Ver en Google Maps
-        </a>
+      <div class="btnrow">
+        <a class="btn btn-ghost" href="#como-llegar">Cómo llegar</a>
+        <a class="btn btn-ghost" href="#gran-dia">El gran día</a>
+        <a class="btn btn-ghost" href="#alojamiento">Alojamiento</a>
+        <a class="btn btn-ghost" href="#recomendaciones">Recomendaciones</a>
       </div>
     </section>
 
-    <section class="card">
-      <h2>Dónde alojarse</h2>
+    <!-- CÓMO LLEGAR (PDF pág. 2) -->
+    <section class="card" id="como-llegar">
+      <h2>¿Cómo llegar?</h2>
+      <p class="lead">Referencias aproximadas por carretera:</p>
 
-      <div class="grid">
-        <div class="box">
-          <h3>Hotel 1</h3>
-          <p class="hint">Dirección · Distancia · Precio aprox</p>
-          <a class="link" href="#" target="_blank" rel="noopener">Ver en Maps</a>
-        </div>
-
-        <div class="box">
-          <h3>Hotel 2</h3>
-          <p class="hint">Dirección · Distancia · Precio aprox</p>
-          <a class="link" href="#" target="_blank" rel="noopener">Ver en Maps</a>
-        </div>
-      </div>
-
-      <div class="box" style="margin-top:12px">
-        <h3>Otras opciones</h3>
-        <ul class="list">
-          <li>Airbnb por la zona</li>
-          <li>Hostales cercanos</li>
-          <li>Compartir coche / taxi</li>
+      <div class="box">
+        <ul style="margin:0; padding-left:18px; line-height:1.8; color:#2a2a2a;">
+          <li><strong>Aranda (20m)</strong> — N-122</li>
+          <li><strong>Bilbao (2h 30m)</strong> — A1</li>
+          <li><strong>Madrid (1h 40m)</strong> — A-1</li>
         </ul>
+        <p class="hint" style="margin-top:10px">
+          https://www.google.com/maps/place//data=!4m2!3m1!1s0xd443a90b8e76917:0x9599038323c4112e?sa=X&ved=1t:8290&ictx=111
+        </p>
+        <a class="btn btn-ghost" href="#" target="_blank" rel="noopener">Abrir en Google Maps</a>
+      </div>
+    </section>
+
+    <!-- EL GRAN DÍA (PDF pág. 3) -->
+    <section class="card" id="gran-dia">
+      <h2>Cómo será el gran día</h2>
+      <p class="lead">
+        Aquí os contamos cómo será el gran día y os damos algo de información para que lo podáis disfrutar con nosotros de la mejor manera posible.
+      </p>
+
+      <div class="box">
+        <p class="bodytext" style="margin:0">
+          <strong>Autobuses:</strong> tanto para la llegada como al finalizar la celebración, dispondréis de autobuses con salida a las <strong>12:00</strong> desde <strong>Aranda de Duero</strong>.<br><br>
+          <strong>Ceremonia:</strong> el “sí, quiero” será en la propia bodega, a las <strong>12:30</strong> de la mañana.<br><br>
+          <strong>Cóctel:</strong> allí mismo podremos disfrutar de un cóctel para ir entrando en calor.<br><br>
+          <strong>Banquete y baile:</strong> continuaremos con el banquete y, para los más atrevidos, un baile con unos digestivos.<br><br>
+          <strong>Alojamiento:</strong> para todos aquellos que os tenéis que desplazar y por tanto tenéis que hacer noche allí, os dejamos a continuación algunas propuestas.
+        </p>
+      </div>
+    </section>
+
+    <!-- ALOJAMIENTO (PDF pág. 4) -->
+    <section class="card" id="alojamiento">
+      <h2>Alojamiento</h2>
+      <p class="lead">
+        Algunas opciones (y en Aranda podéis encontrar muchas más).
+      </p>
+
+      <div class="box">
+        <h3 style="margin:0 0 8px; font-family:'Playfair Display', serif;">Hospedería del Monasterio</h3>
+        <p class="bodytext" style="margin:0">
+          El propio Monasterio dispone de Hospedería. En la web podéis ver más info:
+          <strong>hospederiamonasteriodelavid.es</strong><br>
+          Para reservar, llamad por teléfono y consultad disponibilidad (si la fecha está bloqueada, puede no aparecer disponible en la web).
+        </p>
+      </div>
+
+      <div class="box" style="margin-top:12px">
+        <h3 style="margin:0 0 8px; font-family:'Playfair Display', serif;">Opciones más económicas en Aranda de Duero</h3>
+        <div class="bodytext" style="line-height:1.75">
+          <strong>Hotel Alisi</strong><br>
+          Av. Castilla, 25.<br>
+          Tlf: 947 04 80 58<br><br>
+
+          <strong>Hotel V. Ciudad</strong><br>
+          Av. Castilla, 66<br>
+          Tlf: 687 23 72 46
+        </div>
+      </div>
+    </section>
+
+    <!-- RECOMENDACIONES (PDF pág. 5) -->
+    <section class="card" id="recomendaciones">
+      <h2>Recomendaciones por la zona</h2>
+      <p class="lead">
+        Para los que queráis aprovechar la ocasión para conocer la zona…
+      </p>
+
+      <div class="box">
+        <h3 style="margin:0 0 8px; font-family:'Playfair Display', serif;">Gastronomía de la Ribera</h3>
+        <ul style="margin:0; padding-left:18px; line-height:1.8; color:#2a2a2a;">
+          <li>Mesón el Pastor</li>
+          <li>El lagar de Severino</li>
+          <li>El lagar de Isilla</li>
+          <li>Cumpanis</li>
+        </ul>
+      </div>
+
+      <div class="box" style="margin-top:12px">
+        <h3 style="margin:0 0 8px; font-family:'Playfair Display', serif;">Mejores vistas</h3>
+        <p class="bodytext" style="margin:0">
+          Paseo por las Hoces del Río Riaza
+        </p>
+      </div>
+
+      <div class="box" style="margin-top:12px">
+        <h3 style="margin:0 0 8px; font-family:'Playfair Display', serif;">Para prepararte para el gran día</h3>
+        <ul style="margin:0; padding-left:18px; line-height:1.8; color:#2a2a2a;">
+          <li>Sebastián Peluqueros</li>
+          <li>Nueva línea</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CIERRE (PDF pág. 6) -->
+    <section class="card" id="cierre">
+      <h2>¡Os esperamos con ilusión!</h2>
+      <p class="bodytext">
+        No dudéis en preguntarnos lo que sea necesario..
+      </p>
+      <p class="bodytext" style="margin-top:10px">
+        Rogamos confirmación para la reserva de plazas y trayecto del autobús.
+      </p>
+
+      <div class="btnrow" style="justify-content:flex-start">
+        <a class="btn btn-primary" href="/boda-jaime-bea/rsvp/">Ir a confirmar asistencia</a>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <small>© Jaime & Bea</small>
+    <small>© Beatriz & Jaime</small>
   </footer>
 
   <script src="/boda-jaime-bea/assets/js/app.js"></script>
